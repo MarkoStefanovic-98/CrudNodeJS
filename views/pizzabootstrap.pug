@@ -1,0 +1,22 @@
+extends layout
+
+block content
+        a(href="/pizza/ajout").btn.btn-success Ajouter une pizza
+        br
+        br
+        div.main.container
+            each pizza in tablopizza
+                div.col-md-4
+                    div.card
+                        div.card-body
+                            h4.card-title #{pizza.DesignPizz}
+                            img.card-img-bottom(src='/images/' + pizza.id +'.jpg', alt='Card image' style='width:80%; height:150px;')
+                            p.card-text #{pizza.description}
+                            p.card-text #{pizza.TarifPizz}€
+                            a(href='/pizza/'+ pizza.id +'/info')
+                                button.btn.btn-light info
+                            a(href='/pizza/'+ pizza.id +'/modif')
+                                button.btn.btn-light Modifier
+                            a(href='/pizza/'+ pizza.id +'/supp')
+                                button.btn.btn-light Supprimer
+                    br

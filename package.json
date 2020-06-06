@@ -1,0 +1,23 @@
+{
+  "name": "projectjson1",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "formidable": "^1.2.2",
+    "fs": "0.0.1-security",
+    "get": "^1.4.0",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "mv": "^2.1.1",
+    "mysql": "^2.18.1",
+    "name": "0.0.2",
+    "path": "^0.12.7",
+    "pug": "2.0.0-beta11"
+  }
+}

@@ -1,0 +1,26 @@
+extends layout
+
+block content
+
+    each pizza in tablopizza
+        h3 Modifier la pizza :
+        p #{pizza.DesignPizz}
+
+
+            div.main.container
+                div.col-md-12
+                    div.card
+                        div.card-body
+                            img.card-img-bottom(src='/images/' + pizza.id + '.jpg', alt='Card image' style='width:30%; height:200px')
+                            form(action='/pizza/modif/'+ pizza.id method='post')
+                                div.container
+                                    div.row
+                                        input.form-control(type='hidden', value=''+ pizza.id +'', name='idpizz')
+                                        input.form-control(type='text', value=''+ pizza.DesignPizz +'', name='designpizz')
+                                        input.form-control(type='text', value=''+ pizza.description +'', name='description')
+                                        input.form-control(type='number', step='0.01', value=''+ pizza.TarifPizz +'', name='tarif')
+                                        button.btn.btn-light(type='submit') Valider
+                            a(href='/pizza')
+                                button.btn.btn-light Retour
+                            a(href='/pizza/'+ pizza.id +'/supp')
+                                button.btn.btn-light Supprimer

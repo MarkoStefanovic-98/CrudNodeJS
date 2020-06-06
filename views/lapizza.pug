@@ -1,0 +1,22 @@
+extends layout
+
+block content
+
+    each pizza in tablopizza
+        h3 Information de la pizza :
+        p #{pizza.DesignPizz}
+
+
+            div.main.container
+                div.col-md-12
+                    div.card
+                        div.card-body
+                            img.card-img-bottom(src='/images/' + pizza.id + '.jpg', alt='Card image' style='width:30%; height:200px')
+                            p.card-text #{pizza.description}
+                            p.card-text #{pizza.TarifPizz}€
+                            a(href='/pizza')
+                                button.btn.btn-light Retour
+                            a(href='/pizza/'+ pizza.id +'/modif')
+                                button.btn.btn-light Modifier
+                            a(href='/pizza/'+ pizza.id +'/supp')
+                                button.btn.btn-light Supprimer
